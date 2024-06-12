@@ -1,0 +1,87 @@
+apiVersion: v1
+entries:
+  fluent-bit:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: changed
+          description: "Update _Fluent Bit_ OCI image to [v3.0.6](https://github.com/fluent/fluent-bit/releases/tag/v3.0.6)"
+    apiVersion: v1
+    appVersion: 3.0.6
+    created: "2024-06-12T09:07:06.656402452Z"
+    description: Fast and lightweight log processor and forwarder or Linux, OSX and
+      BSD family operating systems.
+    digest: 720cc9f49c35b9798ed2701ec5aa343bbb3b17298bc1f87b977bcaa4c97c6901
+    home: https://fluentbit.io/
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/fluentd/fluentbit/icon/fluentbit-icon-color.svg
+    keywords:
+    - logging
+    - fluent-bit
+    - fluentd
+    maintainers:
+    - email: eduardo@calyptia.com
+      name: edsiper
+    - email: naseem@transit.app
+      name: naseemkullah
+    - email: towmeykaw@gmail.com
+      name: Towmeykaw
+    - email: steve.hipwell@gmail.com
+      name: stevehipwell
+    name: fluent-bit
+    sources:
+    - https://github.com/fluent/fluent-bit/
+    urls:
+    - https://github.com/tuotempo/fluent-helm-charts/releases/download/fluent-bit-0.46.9/fluent-bit-0.46.9.tgz
+    version: 0.46.9
+  fluent-operator:
+  - apiVersion: v2
+    appVersion: 2.7.0
+    created: "2024-06-12T09:07:06.787241033Z"
+    dependencies:
+    - condition: fluentbit.crdsEnable
+      name: fluent-bit-crds
+      repository: file://charts/fluent-bit-crds
+      version: 2.7.0
+    - condition: fluentd.crdsEnable
+      name: fluentd-crds
+      repository: file://charts/fluentd-crds
+      version: 2.7.0
+    description: Fluent Operator provides great flexibility in building a logging
+      layer based on Fluent Bit and Fluentd.
+    digest: 5e5af39277585c0056b46161e2495df9e83e00aa4cff1e55fa3dcfd2e9f084f6
+    home: https://www.fluentd.org/
+    icon: https://raw.githubusercontent.com/fluent/fluent-operator/master/docs/images/fluent-operator-icon.svg
+    keywords:
+    - logging
+    - fluent-bit
+    - fluentd
+    - operator
+    maintainers:
+    - email: dehaocheng@kubesphere.io
+      name: wenchajun
+    name: fluent-operator
+    sources:
+    - https://github.com/fluent/fluent-operator
+    urls:
+    - https://github.com/tuotempo/fluent-helm-charts/releases/download/fluent-operator-2.7.0/fluent-operator-2.7.0.tgz
+    version: 2.7.0
+  fluentd:
+  - apiVersion: v2
+    appVersion: v1.16.2
+    created: "2024-06-12T09:07:06.897570753Z"
+    description: A Helm chart for Kubernetes
+    digest: 47b56a99cf578dc27d2ba0a21f07da21fc35b6d217472cafc74ea6534757e74f
+    home: https://www.fluentd.org/
+    icon: https://www.fluentd.org/images/miscellany/fluentd-logo_2x.png
+    maintainers:
+    - email: eduardo@treasure-data.com
+      name: edsiper
+    - email: diogo.filipe.tomas.guerra@cern.ch
+      name: dioguerra
+    name: fluentd
+    sources:
+    - https://github.com/fluent/fluentd/
+    - https://github.com/fluent/fluentd-kubernetes-daemonset
+    urls:
+    - https://github.com/tuotempo/fluent-helm-charts/releases/download/fluentd-0.5.3-tt/fluentd-0.5.3-tt.tgz
+    version: 0.5.3-tt
+generated: "2024-06-12T09:07:06.89757985Z"
